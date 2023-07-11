@@ -1,0 +1,41 @@
+.open {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+  }
+  
+  .closed {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 100;
+  }
+
+.TextField__label {
+  color:gray !important
+}
+
+.TextField__border {
+  border-color: white !important;
+  color:white !important
+}
+.myli {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 3px;
+  margin-right: 10px;
+}
+.myli:last-child {
+  margin-right: 0;
+}
+
+.myli:after {
+  content: '';
+  display: block;
+  margin: 0%;
+  height: 3px;
+  width: 0px;
+  background: transparent;
+  transition: width .5s ease-in-out, background-color .5s linear;
+}
+.myli:hover:after {
+  width: 100%;
+  background: rgb(62, 61, 61);
+}

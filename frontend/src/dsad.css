@@ -1,0 +1,144 @@
+
+.footer
+{
+    position: relative;
+    display: grid;
+    
+    margin-left: 38%;
+    margin-top: 10%;
+    width: 400px;
+    height: 400px;
+   
+    background-image: url("photo.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:contain;
+    border-radius: 15px;
+}
+
+
+.user {
+    
+    position:absolute;
+    
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    align-self: center;
+    
+}
+
+.Login-text{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+    text-align: center;
+    font-family:cursive;
+    font-weight: bolder;
+    font-size: 19px;
+}
+input[type="email"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 3px;
+    color: brown;
+    font-family:cursive;
+    border-style: none;
+    
+}
+input::placeholder {
+    animation: mytext infinite;
+    animation-duration: 5s;
+    color:coral;
+}
+input[type="password"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 3px;
+    color: brown;
+    font-family:cursive;
+    border-style: none;
+}
+.submit {
+    
+    
+   
+    width: 75px;
+    padding: 7px;
+    border-radius: 4px;
+   
+    animation:submit infinite;
+    animation-duration: 3s;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
+}
+.submit:hover {
+    background-color: aqua;
+    cursor: pointer;
+}
+.submit:active {
+    background-color: blueviolet;
+    cursor: pointer;
+    
+}
+
+@keyframes submit {
+    0%{
+        background-color: cadetblue;
+    }
+    25%{
+        background-color: black;
+    }
+    50%{
+        background-color: burlywood;
+    }
+    75%{
+        background-color: chocolate;
+    }
+    100%{
+        background-color: cornflowerblue;
+    }
+}
+@keyframes rotation {
+    0%{
+        rotate: 20deg;
+    }
+    25%{
+        rotate: 95deg;
+    }
+    50%{
+        rotate: 170deg;
+    }
+    75%{
+        rotate: 280deg;
+    }
+    100%{
+        rotate: 360deg;
+    }
+}
+
+@keyframes mytext {
+    0%{
+        font-size: 45px;
+    }
+    25%{
+        font-size: 35px;
+    }
+    50%{
+        font-size: 28px;
+    }
+    75%{
+        font-size: 23px;
+    }
+    100%{
+        font-size: 19px;
+    }
+}
