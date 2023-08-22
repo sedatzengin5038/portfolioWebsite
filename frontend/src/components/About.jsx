@@ -1,9 +1,21 @@
 import React from 'react'
-
-const About = () => {
+import { useState,useEffect } from 'react'
+import AOS from "aos";
+import "aos/dist/aos.css";
+const About = ({dataaos}) => {
+    const [portfolioAbout, setPortfolioAbout] = useState()
+    const fetchPortfolio = async()=>{
+        fetch("http://localhost:8081/portfolio").then(Response => Response.json()).then(data=>setPortfolioAbout(data[0].about))
+    }
+    useEffect(() => {
+        fetchPortfolio()
+        AOS.init();
+        AOS.refresh();
+    }, [])
     return (
-        <div id='about-section' name="about" className='w-full h-screen bg-gradient-to-b from-gray-800 to-black text-white'>
-            <div className='max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full'>
+        <div  id='about-section' name="about" className='w-full h-screen bg-gradient-to-b from-gray-800 via-black to-gray-800 text-white'>
+            <div data-aos={dataaos}  data-aos-offset="300"
+     data-aos-easing="ease-in-sine" className='max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full'>
                 <div className=' pb-8'>
                     <p className=' text-4xl font-bold inline border-b-4 border-gray-500'>
                         About
@@ -11,10 +23,9 @@ const About = () => {
                     
                 </div>
                     <p className=' text-xl mt-20'>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut itaque at qui laudantium asperiores alias, laborum mollitia, saepe impedit dolorum, corporis soluta nulla aperiam vero exercitationem consequuntur maxime placeat. Quia, nihil minus. Earum incidunt totam id expedita perferendis tenetur rerum sint quas esse minus iure repellendus, blanditiis fuga qui et?
+                        {portfolioAbout?portfolioAbout:""}                        
                     </p>
-                    <br />
-                    <p className=' text-xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti ratione earum at, libero atque autem cum necessitatibus rem. Aliquam quam explicabo illo impedit itaque doloribus et placeat assumenda, laborum dolore minima sequi eaque nesciunt asperiores tempora quos sapiente maxime magni eveniet recusandae suscipit distinctio! Suscipit nobis modi maiores expedita possimus!</p>
+                    
             </div>
         </div>
     )

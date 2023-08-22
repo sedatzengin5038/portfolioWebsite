@@ -39,7 +39,7 @@
     font-weight: bolder;
     font-size: 19px;
 }
-input[type="email"] {
+input[type="email"],.text {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,6 +51,7 @@ input[type="email"] {
     border-style: none;
     
 }
+
 input::placeholder {
     animation: mytext infinite;
     animation-duration: 5s;
@@ -79,6 +80,7 @@ input[type="password"] {
     animation-duration: 3s;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bolder;
+    margin-bottom: 2%;
 }
 .submit:hover {
     background-color: aqua;
